@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <!--1. Create a button , on click of which new Heading tag h1 should be added with text as "MERN stack" on the screen above button -->
+
+    <button id="btn">Click Me</button>
+    <script>
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click", function(){
+            let h1 = document.createElement("h1");
+            h1.innerText = "MERN Stack";
+            btn.after(h1);
+        })
+    </script>
+<!-- 
+2.Write code to get 1st H1 element from a webpage using DOM -->
+
+    <h1>Heading 1</h1>
+    <h1>Heading 2</h1>
+    <h1>Heading 3</h1>
+    <h1>Heading 4</h1>
+    <h1>Heading 5</h1>
+    <script>
+        let h1 = document.getElementsByTagName("h1");
+        document.querySelector("h1").style.color = "Green";
+        console.log(h1[0]);
+    </script>
+<!-- 
+
+
+
+3.Write code to implement timer clock using JS -- display HH:MM:SS -- the time should keep updating every second -->
+
+    <h1 id="clock"></h1>
+    <script>
+        let clock = document.getElementById("clock");
+        setInterval(function(){
+            let date = new Date();
+            let time = date.toLocaleTimeString();
+            clock.innerText = time;
+        }, 1000)
+    </script>
+
+
+<!--
+   4. Create an HTML page having content as Hello world and a button named Replace Text. When user will click on this button page content should be changed to "Welcome to Elevation academy".
+-->
+
+    <h1 id="text">Hello World</h1>
+    <button id="btn1">Replace Text</button>
+    <script>
+        let btn1 = document.getElementById("btn1");
+        let text = document.getElementById("text");
+        btn1.addEventListener("click", function(){
+            text.innerText = "Welcome to Elevation Academy";
+        })
+    </script>
+
+
+<!-- 5. Create an HTML page having content as Hello world and a button named "Hide Text." When user will click on this button hide the "Hello World" text
+-->
+
+
+    <h1 id="text1">Hello World</h1>
+    <button id="btn2">Hide Text</button>
+    <script>
+        let btn2 = document.getElementById("btn2");
+        let text1 = document.getElementById("text1");
+        btn2.addEventListener("click", function(){
+            text1.style.display = "none";
+        })
+    </script>
+
+
+
+     
+
+
+
+
+
+
+
+</body>
+</html>
